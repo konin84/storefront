@@ -1,0 +1,36 @@
+{% extends 'private_base.html' %}
+{% load static%}
+{% block content %}
+<br><br>
+    <div class="container">
+                    <h2 style="text-align:center">{{ page_name }}</h2>
+            <table id="staff_table" class="table table-sm table-responsible"  style="width:100%">
+                <thead>
+                   <tr class="">
+                      <th>#</th>
+                      <th><h6>Guest name</h6></th>
+                       <th><h6>subject</h6></th>
+                      <th><h6>phone number</h6></th>
+                       <th><h6>email</h6></th>
+                       <td><h6>Action</h6></td>
+                    </tr>
+                </thead>
+              <tbody >
+                 {% include 'main/private/messages/partial_messages_list.html' %}
+              </tbody>
+            </table>
+        <div class="row">
+                <div class="col-md-8 my-auto">
+                    <h2 >Showing page {{msg_obj.number}} of {{msg_obj.paginator.num_pages}}</h2>
+                 </div>
+            </div>
+        <br>
+            <!--Pagination-->
+            {% include 'main/private/messages/pagination.html' %}
+            <!--end of Pagination-->
+
+    {% include 'includes/search_scripts.html' %}
+    <script src="{% static 'js/data_analysis/dataTables.js' %}"></script>
+    </div>
+
+{% endblock content%}

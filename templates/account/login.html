@@ -1,0 +1,33 @@
+{% extends "account_base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<link href="{% static 'css/account.css' %}" rel="stylesheet">
+
+<div class="login_box">
+        <img src="{% static 'images/avatar.png' %}" class="avatar">
+        <h2 style="color:red; text-align:center;">Log in here</h2>
+            <form action="" method="POST" name="form_password" onsubmit="return matchpass()" autocomplete="off">
+                {% csrf_token%}
+                <input type="hidden" name="next" value="{{ next }}">
+                    <div class="form-group">
+                        <div class="form-label-group">
+                          {{ form.username|as_crispy_field}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-label-group">
+                          {{ form.password|as_crispy_field }}
+                        </div>
+                    </div>
+                <button class="btn btn-primary btn-block" type="submit">Login</button>
+
+            </form>
+                <a href="{% url 'password_reset' %}" style="background-color:white;">
+                    <h6>Forgotten your password?</h6></a>
+        </div>
+    </div>
+
+</div>
+ {% endblock content %}
+

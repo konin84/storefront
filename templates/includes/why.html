@@ -1,0 +1,131 @@
+  <!-- why section -->
+
+  <section class="why_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Why Choose <span>Us</span>
+        </h2>
+      </div>
+      <div class="row">
+        {% for data in data_set %}
+        <div class="col-md-6 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/w1.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Vision and Values
+              </h5>
+              <p>
+                {{data.vision_and_values | safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/w2.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Customer Support
+              </h5>
+              <p>
+                {{data.customer_support | safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+                <h3>&nbsp...</h3>
+         {% endfor %}
+      </div>
+
+      <div class="row">
+        {% for data in data_set %}
+        <div class="col-md-12 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/w3.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Sustainability
+              </h5>
+              <p>
+                {{data.sustainability | safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+          <h3>&nbsp...</h3>
+         {% endfor %}
+      </div>
+
+      <div class="row">
+        {% for data in data_set %}
+        <div class="col-md-6 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/w1.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Lead Structure
+              </h5>
+              <p>
+                {{data.lead_structure | safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/w2.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Our Belief
+              </h5>
+              <p>
+                {{data.our_belief | safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+          <h3>&nbsp...</h3>
+         {% endfor %}
+      </div>
+
+      <div class="row">
+        {% for data in data_set %}
+         <div class="col-md-12 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/w3.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Quality
+              </h5>
+              <p>
+                {{data.our_quality | safe}}
+              </p>
+            </div>
+          </div>
+        </div>
+         {% empty %}
+          <h3>&nbsp...</h3>
+         {% endfor %}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- end why section -->

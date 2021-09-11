@@ -1,0 +1,22 @@
+{% extends "private_base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+     <div class="content-section">
+         <form method="POST">
+             {% csrf_token %}
+             <fieldset class="form-group">
+                 <legend class="border-bottom mb-4">Choose User type</legend>
+                <input type="radio" value="Administrator">
+                 <label for="Administrator">Administrator</label><br>
+                <input type="radio" value="Webmaster">
+                 <label for="Webmaster">Webmaster</label>
+             </fieldset>
+             <div class="form-group">
+                 <button class="btn btn-outline-info" type="submit">Sign Up Staff</button>
+             </div>
+
+         </form>
+
+     </div>
+
+{% endblock content %}

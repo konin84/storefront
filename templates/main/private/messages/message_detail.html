@@ -1,0 +1,28 @@
+{% extends 'private_base.html' %}
+{% load static%}
+
+{% block content %}
+        <br><br>
+        <div class="row">
+            <div class="col-md-12 col-12 m-auto">
+                <h2>I am: {{msg.name}}</h2>
+                <br>
+            </div>
+        </div>
+
+        <div class="row">
+             <div class="col-md-12 col-12 m-auto">
+                <h2 class="subtitle">
+                    Message type: {{msg.subject}}
+                </h2>
+            </div>
+        </div>
+<br>
+        <div class="row">
+            <div class="col-md-12 m-auto">
+                <h2>Message content:</h2>
+                {{ msg.message | safe }}
+            </div>
+        </div>
+<br><br>
+{% endblock content%}

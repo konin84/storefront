@@ -1,0 +1,24 @@
+{% extends 'private_base.html' %}
+
+{% block content %}
+<!--Start content-->
+<br><br><br><br>
+<div class="content-section">
+   <div class="row">
+      <br/>
+     <div class="col-md-8 m-auto">
+          <form action="" method="POST">
+            {% csrf_token %}
+               <p>Do you want to delete picture with ID: <b>{{object.id}} ?</b></p>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                <br>
+              <input type="submit" class="btn btn-md btn-danger" value="Confirm">
+              <a class="btn btn-md btn-success" href="{% url 'gallery:gallery' %}">Cancel</a>
+        </form>
+     </div>
+   </div>
+
+</div>
+<br><br><br>
+{% endblock %}
+<!--End content-->

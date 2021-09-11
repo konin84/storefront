@@ -1,0 +1,41 @@
+{% extends 'private_base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+<div class="container mt-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8 m-auto">
+            <form action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+                  {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-2 col-12">
+
+                            </div>
+                            <div class="col-md-8 col-12">
+                                {{ form.category|as_crispy_field }}
+                                {{ form.description|as_crispy_field }}
+                                {{ form.images|as_crispy_field }}
+                            </div>
+                             <div class="col-md-2 col-12">
+
+                            </div>
+                        </div>
+
+                <div class="row">
+                        <div class="col-md-2"></div>
+                         <div class="col-md-8 col-12 ">
+                           <button type="submit" class="btn btn-outline btn-lg  btn-block">
+                               <i class="fa fa-database" aria-hidden="true"></i>
+                               Update picture
+                           </button>
+                        </div>
+                    <div class="col-md-2"></div>
+                 </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

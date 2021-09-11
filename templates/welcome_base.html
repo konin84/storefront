@@ -1,0 +1,190 @@
+{% load static %}
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href=" {% static 'images/favicon.png' %}" type="">
+
+  <title> Cosmetics </title>
+  <!-- bootstrap core css -->
+    {% include "includes/stylesheet.html" %}
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+
+
+</head>
+
+<body>
+  <!-- Background image comes below-->
+  <div class="hero_area">
+    <div class="hero-bg">
+      <img src="{% static 'images/home_bg.jpg' %}" alt="">
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="{% url 'main:welcome' %}">
+            <span>
+              The Hansons Company Ltd
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'main:welcome' %}">Home </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:about_us' %}"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:contact_us' %}">Contact Us</a>
+              </li>
+               <li class="nav-item ">
+                <a class="nav-link" href="{% url 'gallery:view-gallery' %}">Gallery </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'main:our_products' %}">Products</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                {% for slide in data_set1 %}
+                <div class="col-md-10 col-12 m-auto ">
+                  <div class="detail-box">
+                    <h1>
+                      {{ slide.slide1name }}
+                    </h1>
+                    <p> {{ slide.slide1text|safe }}</p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        {{slide.slideBtnText}}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                 {% empty %}
+                <h3>&nbsp...</h3>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class="container ">
+              <div class="row">
+                 {% for slide in data_set1 %}
+                <div class="col-md-10 col-12 m-auto ">
+                  <div class="detail-box">
+                    <h1>
+                      {{ slide.slide2name }}
+                    </h1>
+                    <p> {{ slide.slide2text|safe }}</p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        {{slide.slideBtnText}}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                 {% empty %}
+                <h3>&nbsp...</h3>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                 {% for slide in data_set1 %}
+                <div class="col-md-10 col-12 m-auto">
+                  <div class="detail-box">
+                    <h1>
+                      {{ slide.slide3name }}
+                    </h1>
+                    <p > {{ slide.slide3text|safe }}</p>
+                    <div class="btn-box">
+                      <a href="" class="btn1">
+                        {{slide.slideBtnText}}
+                      </a>
+                  </div>
+                </div>
+                 {% empty %}
+                <h3>&nbsp...</h3>
+                {% endfor %}
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+        </div>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+      <div class="container" >
+                {% if messages %}
+                  <script>
+                      {% for message in messages %}
+                          $(document).ready(function () {
+                              $('.toast').toast('show');
+                          });
+                      {% endfor %}
+                  </script>
+                {% endif %}
+
+
+                <div class="col-md-6 m-auto">
+                {% include "includes/messages.html" %}
+                </div>
+
+       </div>
+        {% block content %}
+
+        {% endblock content %}
+
+
+     <script>
+        setTimeout(function () {
+        if ($('#msg').length > 0){
+            $('#msg').remove();
+        }
+    }, 2000);
+    </script>
+    {% include "includes/scripts.html" %}
+    {% include "includes/footer.html" %}
+
+</body>

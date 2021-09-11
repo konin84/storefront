@@ -1,0 +1,21 @@
+{% extends 'private_base.html' %}
+{% block content %}
+
+<div class="content-section">
+   <div class="row">
+        <div class="col-md-8 m-auto">
+             <h1>{{ page_name }}</h1>
+              <form action="" method="POST">
+                {% csrf_token %}
+                   <p>Do you want to delete <b>{{object.title}}?</b></p>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-cog fa-spin fa-3x fa-fw"></i>
+                    <br>
+                  <input type="submit" class="btn btn-md btn-danger" value="Confirm">
+                  <a class="btn btn-md btn-success" href="{% url 'main:product_list' %}">Cancel</a>
+        </form>
+        </div>
+   </div>
+</div>
+
+{% endblock %}
+<!--End content-->

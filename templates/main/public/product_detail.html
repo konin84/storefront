@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-12 mt-4">
+                <img src="{{product.image.url}}"  alt="Card image cap" style="height:200px; width:326px;">
+                <br><br>
+            </div>
+            <div class="col-md-8">
+            <br>
+            <h2 class="subtitle">
+                {{product.title}}
+            </h2>
+                {{ product.content | safe }}
+            </div>
+        </div>
+
+    </div>
+{% endblock content%}

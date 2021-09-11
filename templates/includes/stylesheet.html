@@ -1,0 +1,20 @@
+{% load static %}
+<head>
+<title>{{ title }}</title>
+
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css.map' %}" rel="stylesheet">
+        <link href="{% static 'css/style.scss' %}" rel="stylesheet">
+
+     {% if title %}
+         <title>  {{ title }} </title>
+        {% else %}
+             <title>  Store-Front </title>
+     {% endif %}
+
+</head>

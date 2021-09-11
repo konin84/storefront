@@ -1,0 +1,108 @@
+{% load static %}
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href=" {% static 'images/favicon.png' %}" type="">
+
+  <title> Cosmetics </title>
+  <!-- bootstrap core css -->
+    {% include "includes/stylesheet.html" %}
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+</head>
+ <style>
+    .notification{
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+        }
+ </style>
+<body class="sub_page">
+
+  <div class="hero_area">
+      <div class="hero-bg">
+        <img src="{% static 'images/hero-bg.jpg' %}" alt="">
+      </div>
+      <!-- header section starts -->
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="{% url 'main:welcome' %}">
+              <span>
+                The Hansons Company Ltd
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{% url 'main:welcome' %}">Home </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'main:about_us' %}"> About</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="{% url 'main:contact_us' %}">Contact Us</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="{% url 'gallery:view-gallery' %}">Gallery </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'main:our_products' %}">Products</a>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+  </div>
+
+  <div class="container" >
+      {% if messages %}
+        <script>
+            {% for message in messages %}
+                $(document).ready(function () {
+                    $('.toast').toast('show');
+                });
+            {% endfor %}
+        </script>
+      {% endif %}
+  </div>
+
+  <div class="col-md-6 m-auto">
+      {% include "includes/messages.html" %}
+    </div>
+
+  <!-- footer section -->
+    {% block content %}
+
+    {% endblock content %}
+
+<script>
+  setTimeout(function () {
+  if ($('#msg').length > 0){
+    $('#msg').remove();
+  }
+  }, 2000);
+</script>
+
+    {% include "includes/scripts.html" %}
+    {% include "includes/footer.html" %}
+
+</body>

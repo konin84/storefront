@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+  <!-- contact section -->
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container" >
+        <h2>
+          Contact <span>Us</span>
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-md-12 m-auto col-12" style="text:white;">
+          <div class="form_container contact-form" style="background-color:#f9f9ee;">
+            <form class="mt-2 pt-2 mb-3 pb-3" action="" method="POST" autocomplete="off">
+            {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 col-12">
+                    {{ form.name|as_crispy_field }}
+                </div>
+                <div class="col-md-6 col-12">
+                    {{ form.subject|as_crispy_field }}
+                </div>
+              </div>
+              <div class="row">
+              <div class="col-md-6 col-12">
+                  {{ form.email|as_crispy_field }}
+              </div>
+               <div class="col-md-6 col-12">
+                  {{ form.phone_number|as_crispy_field }}
+              </div>
+              </div>
+              <div class="row">
+              <div class="col-md-12 col-12">
+                 {{form.media}}
+                  {{ form.message|as_crispy_field }}
+              </div>
+              </div>
+
+            <div class="row">
+                <div class="col-md-12 col-12">
+                       <button type="submit" class="btn btn-block" style="background-color:6b9c8c;">
+                           <i class="fa fa-database" aria-hidden="true"></i>
+                           Contact us
+                       </button>
+                </div>
+            </div>
+        </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+
+{% endblock content %}

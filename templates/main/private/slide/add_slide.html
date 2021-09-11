@@ -1,0 +1,63 @@
+{% extends 'private_base.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container">
+        <h2>Sliders registration...</h2>
+        <form class="mt-2 pt-2 mb-2 pb-2" action="" method="POST" autocomplete="off" >
+            {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{ form.slideBtnText|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{form.slide1name|as_crispy_field}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{form.media}}
+                        {{ form.slide1text|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{form.slide2name |as_crispy_field}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{form.media}}
+                        {{ form.slide2text|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{form.slide3name|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{form.media}}
+                        {{ form.slide3text|as_crispy_field }}
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-md-9 col-12">
+                       <button type="submit" class="btn btn-primary btn-md btn-block bg-dark ">
+                           <i class="fa fa-database" aria-hidden="true"></i>
+                           Add Sliders
+                       </button>
+                </div>
+                 <div class="col-md-3 col-12">
+                <a href="{% url 'main:product_list' %}" class="btn btn-primary  btn-sm bg-dark text-white float-right">Products list</a>
+            </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock content%}

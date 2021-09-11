@@ -1,0 +1,107 @@
+/*background: url('/static/images/Theatre_compressed.jpg');*/
+
+
+body {
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    background-repeat: no-repeat;
+    margin-top: 380px;
+    padding: 120px;
+    background-color:#fff;
+
+}
+
+.form-group{
+    color: azure;
+}
+
+.login_box{
+    width: 380px;
+    height: 400px;
+    background: #3d6d5f;
+
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 20px 30px;
+    margin-bottom:200px;
+    margin-top:100px;
+    border-radius:25px;
+}
+
+.avatar{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-left: 100px;
+    margin-top: -90px;
+
+ }
+
+ h1 {
+    margin:0;
+    padding: 10px 0 20px;
+    text-align: center;
+    font-size: 22px;
+
+ }
+
+.login_box p {
+    margin:0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.login_box input{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.login_box input[type="text"], input[type="password"]
+{
+    border:none;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    outline: none;
+    height: 30px;
+    color: black;
+    font-size: 16px;
+    border-radius:5px;
+
+}
+
+.login_box input[type=submit]
+{
+    border: none;
+    outline:none;
+    height:40px;
+    color: black;
+    font-size: 18px;
+    border-radius:20px;
+}
+
+.login_box input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: green;
+    color: #fff;
+}
+
+
+.login_box a{
+    text-decoration: none;
+    font-size:121px;
+    line-height:20px;
+    color: darkgrey;
+
+}
+
+.login_box a:hover
+ {
+    color:#ffc107;
+}
+
+

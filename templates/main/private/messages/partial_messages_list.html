@@ -1,0 +1,17 @@
+{% for m in msg_obj %}
+    <tr>
+        <td>{{m.id}}</td>
+        <td>{{m.name }}</td>
+        <td>{{m.subject}}</td>
+        <td>{{m.phone_number}}</td>
+        <td>{{m.email}}</td>
+        <td><a class="btn  btn-sm mt-0 mb-1 " href="{% url 'main:msg_detail' m.id %}" class="btn text-secondary px-0 ">
+            <i class="fa fa-envelope" aria-hidden="true"></i> </a>
+        <a class="btn  btn-sm mt-0 mb-1 " href="{% url 'main:delete_msg' m.id %}">
+                <i class="fa fa-trash-o" style="color:red;"></i>
+              </a>
+
+        </td>
+
+    </tr>
+{% endfor %}

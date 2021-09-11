@@ -1,0 +1,70 @@
+{% extends 'private_base.html' %}
+{% load static%}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="container">
+            <br>
+            <h2> You can only register the company once and update it later...</h2>
+        <form class="mt-2 pt-2 mb-3 pb-3" action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+               <div class="row">
+                    <div class="col-md-12 col-12">
+                        {{ form.name|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        {{ form.email|as_crispy_field }}
+                    </div>
+                     <div class="col-md-6 col-12">
+                        {{ form.phone_number|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        {{ form.tweeter|as_crispy_field }}
+                    </div>
+                     <div class="col-md-6 col-12">
+                        {{ form.facebook|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        {{ form.youtube|as_crispy_field }}
+                    </div>
+                     <div class="col-md-6 col-12">
+                        {{ form.instagram|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-12 col-12">
+                       {{form.media}}
+                        {{ form.description|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-12 col-12">
+                       {{form.media}}
+                        {{ form.located_at|as_crispy_field }}
+                    </div>
+                </div>
+                <div class="row">
+                     <div class="col-md-12 col-12">
+                        {{ form.image|as_crispy_field }}
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-md-12 col-12">
+                       <button type="submit" class="btn btn-primary btn-md btn-block bg-dark ">
+                           <i class="fa fa-database" aria-hidden="true"></i>
+                           Save Company Detail
+                       </button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+{% endblock content%}

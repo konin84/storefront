@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br><br>
+  <!-- about section -->
+  <section class="about_section layout_padding-bottom">
+    <div class="container  ">
+      <div class="row">
+
+        <div class="col-md-6 ">
+          {% for i in data_set2 %}
+          <div class="img-box">
+
+            <img src="{{i.image.url}}" alt="Card image cap">
+          </div>
+           {% empty %}
+                <h3>&nbsp...</h3>
+               {% endfor %}
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About <span>Us</span>
+              </h2>
+            </div>
+            {% for ab in data_set1 %}
+            <p>
+              {{ ab.about_company | safe}}
+            </p>
+            {% empty %}
+                <h3>&nbsp...</h3>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+{% endblock content %}

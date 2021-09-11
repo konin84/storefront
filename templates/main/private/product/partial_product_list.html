@@ -1,0 +1,17 @@
+{% for product in product_obj %}
+    <tr>
+        <td>#{{product.id}}</td>
+        <td>{{product.title }}</td>
+        <td>{{product.intro}}</td>
+        <td>
+           <a href="{% url 'main:update_product' product.id %}" class="btn text-secondary px-0 ">
+              <i class="fa fa-pencil text-success" style="color:green;"></i>
+             </a>
+              <a class="btn  btn-sm mt-1 mb-1 " href="{% url 'main:delete_product' product.id %}">
+                <i class="fa fa-trash-o" style="color:red;"></i>
+              </a>
+        </td>
+    </tr>
+{% endfor %}
+
+

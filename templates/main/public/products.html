@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ <!-- plant section -->
+  <section class="plant_section layout_padding">
+    <div class="container">
+              <div class="heading_container heading_center">
+                <h2>
+                  Our <span>Products</span>
+                </h2>
+                <h2> Click on Read or More to learn more about the specific product..</h2>
+                <h2> Whenever you mose over a specific product</h2>
+              </div>
+
+            <hr>
+            <div class="row">
+              {% for product in products %}
+              <div class="col-sm-6 col-md-4 col-lg-3">
+                  <div class="box">
+                    <div class="option_container">
+                      <div class="options">
+                        <a href="{% url 'main:product_detail' product.slug %}">Read</a>
+                        <a href="{% url 'main:product_detail' product.slug %}">More</a>
+                      </div>
+                    </div>
+                    <div class="img-box">
+                      <img src="{{product.image.url}}" alt="Card image cap">
+                    </div>
+                    <div class="detail-box">
+                      <a href="">
+                        <h2>{{product.title}}</h2>
+                        <p>{{product.intro}}</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+               {% empty %}
+                <h3>&nbsp...</h3>
+               {% endfor %}
+            </div>
+
+
+
+      </div>
+
+
+    </div>
+  </section>
+<!-- end plant section -->
+
+{% endblock content %}
